@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@vue/composition-api": "^0.4.0",
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "ramda": "^0.27.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
