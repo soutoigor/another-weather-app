@@ -25,7 +25,10 @@ import {
   isEmpty,
   head,
 } from 'ramda'
-import { reactive, toRefs } from '@vue/composition-api'
+import {
+  reactive,
+  toRefs,
+} from 'vue'
 
 export default {
   setup(props, { emit }) {
