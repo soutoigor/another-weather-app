@@ -2,16 +2,15 @@
   <article>
     name: {{ name }}
     country: {{ country }}
-    key: {{ key }}
     <section>
       <get-location
         @getLocation="setLocation"
-        @locationNotFound="setLocationNotFound"
+        @locationNotFound="showLocationNotFound"
       />
-    <p v-if="showMessageNotFound">Localização não encontrada!</p>
+    <span v-if="showMessageNotFound">Localização não encontrada!</span>
     </section>
     <section>
-      <current-weather />
+      <current-weather :location-key="key" />
       <day-weather />
       <forecast-weather />
     </section>
@@ -23,7 +22,7 @@ import GetLocation from '@/components/GetLocation.vue'
 import ForecastWeather from '@/components/ForecastWeather.vue'
 import DayWeather from '@/components/DayWeather.vue'
 import CurrentWeather from '@/components/CurrentWeather.vue'
-import { reactive, toRefs } from '@vue/composition-api'
+import { reactive, toRefs } from 'vue'
 
 export default {
   components: {
@@ -34,9 +33,9 @@ export default {
   },
   setup() {
     const state = reactive({
-      name: '',
-      key: '',
-      country: '',
+      name: null,
+      key: null,
+      country: null,
       showMessageNotFound: false,
     })
 
@@ -46,17 +45,19 @@ export default {
       state.key = key
     }
 
-    const setLocationNotFound = () => {
+    const showLocationNotFound = () => {
+      const MESSAGE_TIMEOUT = 3000
       state.showMessageNotFound = true
+
       setTimeout(() => {
         state.showMessageNotFound = false
-      }, 3000)
+      }, MESSAGE_TIMEOUT)
     }
 
     return {
       ...toRefs(state),
       setLocation,
-      setLocationNotFound,
+      showLocationNotFound,
     }
   },
 }
