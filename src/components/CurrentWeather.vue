@@ -1,7 +1,10 @@
 <template>
   <article>
     <h1>{{ text }}</h1>
-    <img v-if="icon" :src="iconURL" />
+    <weather-icon
+      v-if="icon"
+      :icon="icon"
+    />
     <ul>
       <li>Temperatura: {{ temperature }}C°</li>
       <li>Sensação térmica: {{ feelTemperature }}C°</li>
@@ -13,22 +16,23 @@
 </template>
 
 <script>
+import WeatherIcon from '@/components/WeatherIcon.vue'
 import axios from '@/axios'
 import {
   watch,
   reactive,
-  computed,
   toRefs,
 } from 'vue'
 import {
   isNil,
   head,
-  lte,
   path,
-  toString,
 } from 'ramda'
 
 export default {
+  components: {
+    WeatherIcon,
+  },
   props: {
     locationKey: {
       type: String,
@@ -46,16 +50,9 @@ export default {
       UV: null,
       visibility: null,
     })
-    const iconURL = computed(() => {
-      const iconNumber = lte(weatherDetails.icon, 9)
-        ? `0${weatherDetails.icon}`
-        : toString(weatherDetails.icon)
-
-      return `https://developer.accuweather.com/sites/default/files/${iconNumber}-s.png`
-    })
 
     const setWeatherDetails = ({
-      WeatherIcon,
+      WeatherIcon: icon,
       WeatherText,
       Temperature,
       RealFeelTemperature,
@@ -63,7 +60,7 @@ export default {
       UVIndexText,
       Visibility,
     }) => {
-      weatherDetails.icon = WeatherIcon
+      weatherDetails.icon = icon
       weatherDetails.text = WeatherText
       weatherDetails.temperature = path(['Metric', 'Value'], Temperature)
       weatherDetails.feelTemperature = path(['Metric', 'Value'], RealFeelTemperature)
@@ -92,7 +89,6 @@ export default {
     })
 
     return {
-      iconURL,
       ...toRefs(weatherDetails),
     }
   },
