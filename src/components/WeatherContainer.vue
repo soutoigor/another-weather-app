@@ -11,8 +11,8 @@
     </section>
     <section>
       <current-weather :location-key="key" />
+      <forecast-weather :location-key="key" />
       <day-weather />
-      <forecast-weather />
     </section>
   </article>
 </template>
