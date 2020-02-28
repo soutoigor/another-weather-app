@@ -12,7 +12,7 @@
     <section>
       <current-weather :location-key="key" />
       <forecast-weather :location-key="key" />
-      <day-weather />
+      <weather-by-hours :location-key="key" />
     </section>
   </article>
 </template>
@@ -20,7 +20,7 @@
 <script>
 import GetLocation from '@/components/GetLocation.vue'
 import ForecastWeather from '@/components/ForecastWeather.vue'
-import DayWeather from '@/components/DayWeather.vue'
+import WeatherByHours from '@/components/WeatherByHours.vue'
 import CurrentWeather from '@/components/CurrentWeather.vue'
 import { reactive, toRefs } from 'vue'
 
@@ -28,7 +28,7 @@ export default {
   components: {
     GetLocation,
     ForecastWeather,
-    DayWeather,
+    WeatherByHours,
     CurrentWeather,
   },
   setup() {

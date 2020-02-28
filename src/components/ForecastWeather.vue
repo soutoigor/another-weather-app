@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex;">
+  <div style="display: flex; flex-wrap: wrap">
     <div
       v-for="(day, index) in forecastData"
       :key="index"
