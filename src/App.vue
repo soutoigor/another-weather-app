@@ -14,3 +14,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+@import '@/styles/_reset.scss';
+@import '@/styles/_font.scss';
+@import '@/styles/_elements.scss';
+</style>

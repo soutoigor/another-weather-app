@@ -1,0 +1,25 @@
+@mixin paddingY($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin paddingX($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin marginY($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin marginX($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin boxShadow() {
+  -moz-box-shadow: 1px 1px 2px 1px rgba($silver-chalice,0.4);
+  -webkit-box-shadow: 1px 1px 2px 1px rgba($silver-chalice,0.4);
+  box-shadow: 1px 1px 2px 1px rgba($silver-chalice,0.4);
+}
