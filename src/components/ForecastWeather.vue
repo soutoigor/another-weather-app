@@ -111,12 +111,8 @@ export default {
 
     watch(() => props.locationKey, async (keyValue) => {
       if (isNil(keyValue)) return
-      try {
-        const weatherData = await getForecastWeather(keyValue)
-        setForecastWeather(weatherData)
-      } catch (error) {
-        console.log(error)
-      }
+      const weatherData = await getForecastWeather(keyValue)
+      setForecastWeather(weatherData)
     })
 
     return {
