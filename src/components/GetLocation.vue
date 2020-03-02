@@ -112,15 +112,11 @@ export default {
       const params = {
         q: state.cityToSearch,
       }
-      try {
-        const { data } = await axios.get(
-          '/locations/v1/cities/search',
-          { params },
-        )
-        setLocation(head(data))
-      } catch (error) {
-        console.log(error)
-      }
+      const { data } = await axios.get(
+        '/locations/v1/cities/search',
+        { params },
+      )
+      setLocation(head(data))
     }
 
     return {
