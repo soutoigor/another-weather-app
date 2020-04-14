@@ -16,6 +16,10 @@ This project was made to test the **new VueJS 3**, its Composition API.
 npm install
 ```
 
+## Environment variable
+Add `.env` file with a AccuWeather ApiKey following the `.env.example` file.  
+You can get it [here](https://developer.accuweather.com/), create an account and create a new app. :)
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
