@@ -30,3 +30,4 @@ npm run build
 - [VueJS 3](https://v3.vuejs.org/)
 - [SCSS](https://sass-lang.com/)
 - [AccuWeather API](https://www.accuweather.com/)
+- [Chart.JS](https://www.chartjs.org/)
