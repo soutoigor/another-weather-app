@@ -1,7 +1,7 @@
 # Another Weather App
 
 A project where you can get the location's weather by Geolocation or by city, consuming the [AccuWeather](https://developer.accuweather.com/) API.  
-This project was made to test the **new VueJS 3**, its Composition API.  
+This project was made to test the **new VueJS 3**, and its Composition API.  
 
 ## Screenshots
 > Using the app
