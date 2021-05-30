@@ -3,13 +3,8 @@
 A project where you can get the location's weather by Geolocation or by city, consuming the [AccuWeather](https://developer.accuweather.com/) API.  
 This project was made to test the **new VueJS 3**, and its Composition API.  
 
-## Screenshots
-> Using the app
-![using the app](https://i.ibb.co/d4DzVXv/chrome-capture-7.gif)  
-> Initial screen
-![Initial](https://i.ibb.co/7zhS3LR/normal.png)  
-> Location found
-![used](https://i.ibb.co/SV4sSwL/used.png)
+## Example
+https://user-images.githubusercontent.com/22479477/120112215-4dfbfd00-c14b-11eb-9586-8c38a1a2bb33.mp4
 
 ## Project setup
 ```
@@ -32,5 +27,6 @@ npm run build
 
 ## Made with
 
-- VueJS 3
-- SCSS
+- [VueJS 3](https://v3.vuejs.org/)
+- [SCSS](https://sass-lang.com/)
+- [AccuWeather API](https://www.accuweather.com/)
